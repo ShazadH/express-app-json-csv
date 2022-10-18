@@ -1,0 +1,65 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": "*.ts",
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "no-console": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "all",
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_"
+          }
+        ]
+      }
+    },
+    {
+      "files": "*.js",
+      "extends": [
+        "eslint:recommended",
+        "plugin:import/typescript"
+      ],
+      "plugins": [
+        "import"
+      ],
+      "rules": {
+        "no-undef": "error",
+        "no-unused-vars": "off",
+        "no-var": "error",
+        "prefer-const": [
+          "error",
+          {
+            "destructuring": "all"
+          }
+        ],
+        "no-trailing-spaces": "error",
+        "no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+            "classes": true,
+            "variables": true,
+            "allowNamedExports": false
+          }
+        ],
+          "import/no-unresolved": [2, {"commonjs": true, "amd": true}]
+      }
+    }
+  ]
+}
